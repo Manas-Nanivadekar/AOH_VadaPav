@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-south-1"
   access_key = var.access_key
-  secret_key = var.aws_secret_key
+  secret_key = var.secret_key
 }
 
 variable "github_link" {
@@ -16,7 +16,7 @@ variable "access_key" {
   description = "AWS access key"
 }
 
-variable "aws_secret_key" {
+variable "secret_key" {
   description = "AWS secret key"
 }
 
@@ -129,4 +129,8 @@ resource "aws_instance" "mern" {
   tags = {
     Name = "mern"
   }
+}
+
+output "instace_public_dns" {
+  value = aws_instance.mern.public_dns
 }
