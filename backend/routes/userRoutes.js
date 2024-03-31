@@ -13,6 +13,6 @@ router.post('/static', user.deployStaticApplication);
 router.post('/mern', user.destroyMernApp);
 
 // destroy static app
-router.post('/static', user.destroyStaticApp);
+router.post('/destroy-static', user.destroyStaticApp);
 
 module.exports = router;

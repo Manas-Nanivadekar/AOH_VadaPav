@@ -8,7 +8,7 @@ variable "github_link" {
   description = "users github link"
 }
 
-variable "project-name" {
+variable "project_name" {
   description = "name of the project"
 }
 
@@ -104,7 +104,7 @@ resource "aws_instance" "mern" {
       "sudo systemctl start mongod",
       "sudo systemctl enable mongod",
       "git clone ${var.github_link}",
-      "cd ${var.project-name}",
+      "cd ${var.project_name}",
       "cd frontend",
       "npm install",
       "npm install",
