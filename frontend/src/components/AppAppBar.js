@@ -116,7 +116,7 @@ function AppAppBar(mode) {
                       to="/docs"
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      Docs
+                      IAM
                     </Link>
                   </Typography>
                 </MenuItem>
