@@ -1,10 +1,11 @@
 # Terraforge: Your Smart DevOps Assistant
+![Alt text](./assets/terraforge.png)
 
 ## Overview
 
 Terraforge stands at the forefront of revolutionizing DevOps practices by introducing an intelligent assistant designed to streamline and optimize the deployment process. This tool is engineered to support predefined technology stacks such as MERN (MongoDB, Express.js, React, Node.js) and LAMP (Linux, Apache, MySQL, PHP/Python/Perl), alongside the capability to generate bespoke Terraform code. Terraforge distinguishes itself by operating within your infrastructure, ensuring unparalleled transparency and control over your deployment operations.
 
-![Insert Technical Diagram Here: Overview of Terraforge Workflow]
+![Alt text](./assets/arch-diag.png)
 
 ## Features
 
