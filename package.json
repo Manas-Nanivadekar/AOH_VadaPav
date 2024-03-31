@@ -2,7 +2,6 @@
   "name": "majs-tech",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
@@ -16,7 +15,10 @@
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "react": "^17.0.0 || ^18.0.0",
+    "react-code-blocks": "^0.1.6",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.0 || ^18.0.0",
+    "react-icons": "^5.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "tailwind-merge": "^2.2.1",

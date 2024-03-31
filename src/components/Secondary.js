@@ -2,17 +2,12 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material";
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
-import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
-import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
-import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+
 
 const cloudStyle = {
   height: "80%",
@@ -87,7 +82,7 @@ export default function Secondary() {
                       : "primary.light",
                 }}
               >
-                Effortless Deployment in a Few Clicks!
+                Streamline Your Development Workflow!
               </Typography>
               <Typography
                 component="span"
@@ -101,13 +96,7 @@ export default function Secondary() {
                       : "primary.light",
                 }}
               >
-                Dive into the world of effortless project deployment at
-                Majs.tech! Our user-friendly interface welcomes both beginners
-                and seasoned developers, offering a seamless experience. Say
-                farewell to intricate setups; with just a few clicks, input your
-                project details, choose your preferred cloud provider, and click
-                'Deploy.' It's that simple—turn your ideas into reality with
-                Majs.tech, where deployment is a breeze!
+                Simplify your development process with TerraForge! Our intuitive platform is designed to enhance productivity for developers of all levels. Say farewell to cumbersome setups; input your project specifics, select your preferred cloud provider, and initiate deployment with ease. 
               </Typography>
             </Stack>
           </Grid>
@@ -200,13 +189,7 @@ export default function Secondary() {
                       : "primary.light",
                 }}
               >
-                Dive into the world of effortless project deployment at
-                Majs.tech! Our user-friendly interface welcomes both beginners
-                and seasoned developers, offering a seamless experience. Say
-                farewell to intricate setups; with just a few clicks, input your
-                project details, choose your preferred cloud provider, and click
-                'Deploy.' It's that simple—turn your ideas into reality with
-                Majs.tech, where deployment is a breeze!
+                Experience seamless project deployment with TerraForge! Our user-friendly interface caters to all developers. Say goodbye to complex setups; input your project details, choose your cloud provider, and click 'Deploy.' Turn your ideas into reality with TerraForge!
               </Typography>
             </Stack>
           </Grid>

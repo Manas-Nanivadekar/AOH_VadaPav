@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import AppAppBar from './AppAppBar';
 
 const tiers = [
   {
@@ -56,6 +57,7 @@ const tiers = [
 
 export default function Pricing() {
   return (
+    
     <Container
       id="pricing"
       sx={{
@@ -68,6 +70,7 @@ export default function Pricing() {
         gap: { xs: 3, sm: 6 },
       }}
     >
+      <AppAppBar />
       <Box
         sx={{
           width: { sm: '100%', md: '60%' },
@@ -77,12 +80,12 @@ export default function Pricing() {
         <Typography component="h2" variant="h4" color="text.primary">
           Pricing
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        {/* <Typography variant="body1" color="text.secondary">
           Quickly build an effective pricing table for your potential customers with
           this layout. <br />
           It&apos;s built with default Material UI components with little
           customization.
-        </Typography>
+        </Typography> */}
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (

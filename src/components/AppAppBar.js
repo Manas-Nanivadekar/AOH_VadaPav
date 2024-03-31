@@ -11,15 +11,14 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
-import ToggleColorMode from "./ToggleColorMode";
-
+import Docs from "./Docs";
 const logoStyle = {
   width: "140px",
   height: "auto",
   cursor: "pointer",
 };
 
-function AppAppBar({ mode, toggleColorMode }) {
+function AppAppBar(mode) {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -75,7 +74,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <img
-                  src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996757/majs-tech/nav_logo_t9nfft.png"
+                  src="https://res.cloudinary.com/dnvh2fya6/image/upload/v1711814611/majs-tech/terraforge._vcejfs.png"
                   style={logoStyle}
                   alt=""
                 />
@@ -88,15 +87,28 @@ function AppAppBar({ mode, toggleColorMode }) {
                 >
                   <Typography variant="body2" color="text.primary">
                     <Link
-                      to="/product"
+                      to="/deploy"
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      Product
+                      Deploy
                     </Link>
                   </Typography>
                 </MenuItem>
                 <MenuItem
                   //onClick={() => scrollToSection('highlights')}
+                  sx={{ py: "6px", px: "12px" }}
+                >
+                  <Typography variant="body2" color="text.primary">
+                    <Link
+                      to="/copilot"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      Copilot
+                    </Link>
+                  </Typography>
+                </MenuItem>
+                <MenuItem
+                  //onClick={() => scrollToSection('pricing')}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -109,7 +121,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  //onClick={() => scrollToSection('pricing')}
+                  //onClick={() => scrollToSection('faq')}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -122,16 +134,12 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  //onClick={() => scrollToSection('faq')}
+                  //onClick={() => scrollToSection('footer')}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    <Link
-                      to="/developers"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      Developers
-                    </Link>
+                      Contact
+                    
                   </Typography>
                 </MenuItem>
               </Box>
@@ -200,10 +208,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                       flexGrow: 1,
                     }}
                   >
-                    <ToggleColorMode
-                      mode={mode}
-                      toggleColorMode={toggleColorMode}
-                    />
                   </Box>
                   <MenuItem>
                     <Link
@@ -277,9 +281,9 @@ function AppAppBar({ mode, toggleColorMode }) {
   );
 }
 
-AppAppBar.propTypes = {
-  mode: PropTypes.oneOf(["dark", "light"]).isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
-};
+// AppAppBar.propTypes = {
+//   mode: PropTypes.oneOf(["dark", "light"]).isRequired,
+//   toggleColorMode: PropTypes.func.isRequired,
+// };
 
 export default AppAppBar;

@@ -11,9 +11,11 @@ import AppAppBar from "./components/AppAppBar";
 import getLPTheme from "./getLPTheme";
 import ProductPage from "./ProductPage";
 import LandingPage from "./LandingPage";
-import Signin from "./Signin";
-import Signup from "./Signup";
+import Footer from "./components/Footer";
+import Pricing from "./components/Pricing";
 import Pro from "./Pro";
+import Docs from "./components/Docs";
+
 
 
 function App() {
@@ -25,9 +27,10 @@ function App() {
       <Router> 
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/product" component={Pro} />
-          <Route path="/signin" component={Signin}/>
-          <Route path="/signup" component={Signup}/>
+          <Route path="/deploy" component={Pro} />
+          <Route path="/docs" component={Docs} />
+          <Route path="/pricing" component={Pricing} />
+
         </Switch>
       </Router>
     </ThemeProvider>

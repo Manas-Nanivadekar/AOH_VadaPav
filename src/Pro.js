@@ -1,10 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import {
-  Container,
-  Button,
-  Stack,
-} from "@mui/material";
+import { Container, Button, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 import Divider from "@mui/material/Divider";
@@ -16,9 +12,12 @@ import AppAppBar from "./components/AppAppBar";
 import { grey } from "@mui/material/colors";
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import CustomizedMenus from "./components/CustomizedMenus";
 
 export default function MainPage() {
-  const [showRepoLink, setShowRepoLink] = useState(true);
+  const [showAccessKey, setShowAccessKey] = useState(true);
+  const [showSecretKey, setShowSecretKey] = useState(true);
+  const [showRepoLink, setShowRepoLink] = useState(false);
   const [showProjectName, setShowProjectName] = useState(false);
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -68,7 +67,7 @@ export default function MainPage() {
       payload
     );
     console.log(res);
-      
+
     // const data = await res.json();
     // if ((data.status === 422 || !data)) {
     //   window.alert("INvalid Registration");
@@ -78,7 +77,6 @@ export default function MainPage() {
     // }
 
     if (res.status == 200) {
-      
       setCompleted(true);
       window.alert(" Deployment Successfull");
       console.log("Successfull Deployment");
@@ -87,9 +85,13 @@ export default function MainPage() {
       console.log("INvalid Deployment");
     }
   };
-  const projectLink = `${project.projectName}.majs.live`
+  const projectLink = `${project.projectName}.majs.live`;
+  
+  
   const handleNextClick = () => {
-    setShowRepoLink(false);
+    setShowAccessKey(false);
+    setShowSecretKey(false);
+    setShowRepoLink(true);
     setShowProjectName(true);
   };
 
@@ -158,20 +160,63 @@ export default function MainPage() {
                 }}
               ></Typography>
             </Typography>
-            <Typography
+            {/* <Typography
               variant="body1"
               textAlign="center"
               color="text.secondary"
             >
               Paste the link of an existing git repo
-            </Typography>
+            </Typography> */}
             <Stack
-              direction={{ xs: "column", sm: "row" }}
+              direction={{ xs: "column", sm: "column" }}
               alignSelf="center"
               spacing={1}
               useFlexGap
               sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
             >
+              {showAccessKey && (
+                <>
+                  <TextField
+                    hiddenLabel
+                    size="small"
+                    variant="outlined"
+                    aria-label=""
+                    id="accessKey"
+                    placeholder="Your access key here"
+                    onChange={handleInputs}
+                    inputProps={{
+                      autoComplete: "off",
+                      ariaLabel: "Access Key",
+                    }}
+                  />
+                </>
+              )}
+
+              {showSecretKey && (
+                <>
+                  <TextField
+                    hiddenLabel
+                    size="small"
+                    variant="outlined"
+                    aria-label=""
+                    id="secretKey"
+                    placeholder="Your secret key here"
+                    onChange={handleInputs}
+                    inputProps={{
+                      autoComplete: "off",
+                      ariaLabel: "Secret Key",
+                    }}
+                  />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNextClick}
+                  >
+                    Next
+                  </Button>
+                </>
+              )}
+
               {showRepoLink && (
                 <>
                   <TextField
@@ -187,13 +232,6 @@ export default function MainPage() {
                       ariaLabel: "Repo Link",
                     }}
                   />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNextClick}
-                  >
-                    Next
-                  </Button>
                 </>
               )}
 
@@ -212,6 +250,16 @@ export default function MainPage() {
                       ariaLabel: "Project Name",
                     }}
                   />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <CustomizedMenus />
+                  </Box>
+
                   <Button
                     variant="contained"
                     color="primary"
@@ -232,7 +280,6 @@ export default function MainPage() {
                     href={projectLink}
                   >
                     Click here
-                  
                   </Button>
                 </div>
               )}

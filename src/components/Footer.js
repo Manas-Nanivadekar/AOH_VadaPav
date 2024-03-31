@@ -39,7 +39,7 @@ function PreFooter() {
       <Box sx={{ }}>
         <img
           src={
-            "https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
+            "https://res.cloudinary.com/dnvh2fya6/image/upload/v1711814611/majs-tech/terraforge._vcejfs.png"
           }
           style={logoStyle}
           alt=""
@@ -102,7 +102,7 @@ export default function Footer() {
             <Box sx={{ ml: "-15px" }}>
               <img
                 src={
-                  "https://res.cloudinary.com/dnvh2fya6/image/upload/v1709996741/majs-tech/footerlogo_r14blu.png"
+                  "https://res.cloudinary.com/dnvh2fya6/image/upload/v1711814611/majs-tech/terraforge._vcejfs.png"
                 }
                 style={logoStyle}
                 alt=""
@@ -238,7 +238,7 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/majs-tech"
+            href="https://github.com/Manas-Nanivadekar/AOH_VadaPav"
             aria-label="GitHub"
             sx={{ alignSelf: "center" }}
           >
