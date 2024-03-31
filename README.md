@@ -1,4 +1,4 @@
-# Terraforge: Your Smart DevOps Assistant
+# Terraforge: Your Smart DevOps Assistant.
 ![Alt text](./assets/terraforge.png)
 
 ## Overview
