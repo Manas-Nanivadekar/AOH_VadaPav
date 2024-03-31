@@ -45,6 +45,14 @@ async function deployStaticApplication(req, res) {
     res.send(`http://${projectName}.majs.live`);
 }
 
+async function deployLampApp(req, res) {
+    const { accessKey, secretKey, repoLink, projectName } = req.body;
+    process.chdir("terraform/lamp");
+    let output = execShellCommand(`terraform apply -auto-approve -var="access_key=${accessKey}" -var="secret_key=${secretKey}" -var="github_link=${repoLink}" -var="project_name=${projectName}"`);
+    res.send('project deployed successfully');
+
+}
+
 async function destroyMernApp(req, res) {
     const { accessKey, secretKey, repoLink, projectName } = req.body;
     process.chdir("terraform/mern");
