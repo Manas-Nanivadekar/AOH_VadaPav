@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import Pro from "./Pro";
 import Docs from "./components/Docs";
+import Copilot from "./components/Copilot";
 
 
 
@@ -30,7 +31,7 @@ function App() {
           <Route path="/deploy" component={Pro} />
           <Route path="/docs" component={Docs} />
           <Route path="/pricing" component={Pricing} />
-
+          <Route path="/copilot" component={Copilot} />
         </Switch>
       </Router>
     </ThemeProvider>

@@ -48,7 +48,12 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-function CustomizedMenus() {
+function CustomizedMenus({ onSelect }) {
+  const handleSelect = (selectedStack) => {
+    onSelect(selectedStack); // Use the onSelect prop
+    handleClose(); // This is your existing function to close the menu
+  };
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const [loading, setLoading] = useState(false); // Define 'loading' state variable
@@ -84,17 +89,14 @@ function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={() => handleSelect('static')} disableRipple>
           Static - HTML & CSS
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={() => handleSelect('mern')} disableRipple>
           MERN
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={() => handleSelect('lamp')} disableRipple>
           LAMP
-        </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
-          Custom Terraform
         </MenuItem>
       </StyledMenu>
     </div>

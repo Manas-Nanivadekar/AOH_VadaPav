@@ -12,33 +12,46 @@ import AppAppBar from "./components/AppAppBar";
 import { grey } from "@mui/material/colors";
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import CustomizedMenus from "./components/CustomizedMenus";
+import CustomizedMenus, {handleSelect} from "./components/CustomizedMenus";
 
 export default function MainPage() {
   const [showAccessKey, setShowAccessKey] = useState(true);
   const [showSecretKey, setShowSecretKey] = useState(true);
-  const [showRepoLink, setShowRepoLink] = useState(false);
-  const [showProjectName, setShowProjectName] = useState(false);
+  const [showRepoLink, setShowRepoLink] = useState(true);
+  const [showProjectName, setShowProjectName] = useState(true);
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
+  const [selectedStack, setSelectedStack] = useState('');
+  // setSelectedStack(handleSelect);
+
   const [project, setProject] = useState({
+    accessKey: "",
+    secretKey: "",
     repoLink: "",
     projectName: "",
   });
-
-  let name, value;
+  console.log(selectedStack);
+  // console.log(setSelectedStack);
+  let key1, key2, name, value;
 
   const handleInputs = (e) => {
     console.log(e);
-    //name = e.target.name;
+    key1 = e.target.key1;
+    key2 = e.target.key2;
+    name = e.target.name;
     value = e.target.value;
+
     setProject({ ...project, [e.target.id]: value });
+    console.log(project.accessKey);
+    console.log(project.secretKey);
+    console.log(project.projectName);
+    console.log(project.repoLink);
   };
 
   const MakeAPICall = async (e) => {
     e.preventDefault();
-    const { repoLink, projectName } = project;
+    const { accessKey, secretKey, repoLink, projectName } = project;
     // setLoading(true);
     // setTimeout(() => {
     //   setLoading(false);
@@ -58,15 +71,18 @@ export default function MainPage() {
     // });
     console.log("HYUVUIDLHBUYD");
     const payload = {
+      accessKey: accessKey,
+      secretKey: secretKey,
       repoLink: repoLink,
       projectName: projectName,
     };
     console.log(payload);
-    const res = await axios.post(
-      "http://ec2-52-66-208-132.ap-south-1.compute.amazonaws.com:5001/user/deploy",
-      payload
-    );
-    console.log(res);
+    console.log(selectedStack);
+    // const res = await axios.post(
+    //   "http://localhost:5000/deploy/destroy-static",
+    //   payload
+    // );
+    // console.log(res);
 
     // const data = await res.json();
     // if ((data.status === 422 || !data)) {
@@ -75,6 +91,25 @@ export default function MainPage() {
     // } else {
 
     // }
+
+    let apiUrl;
+    switch (selectedStack) {
+      case 'static':
+        apiUrl = "http://localhost:5000/deploy/static";
+        break;
+      case 'mern':
+        apiUrl = "http://localhost:5000/deploy/mern";
+        break;
+      // case 'lamp':
+      //   apiUrl = "http://localhost:5000/deploy/lamp";
+      //   break;
+      // Add more cases as needed
+      default:
+        apiUrl = "http://localhost:5000/deploy"; // Default or error handling
+    }
+
+    // Your existing API call logic, using apiUrl for the endpoint
+    const res = await axios.post(apiUrl, payload);
 
     if (res.status == 200) {
       setCompleted(true);
@@ -85,9 +120,7 @@ export default function MainPage() {
       console.log("INvalid Deployment");
     }
   };
-  const projectLink = `${project.projectName}.majs.live`;
-  
-  
+
   const handleNextClick = () => {
     setShowAccessKey(false);
     setShowSecretKey(false);
@@ -207,13 +240,6 @@ export default function MainPage() {
                       ariaLabel: "Secret Key",
                     }}
                   />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNextClick}
-                  >
-                    Next
-                  </Button>
                 </>
               )}
 
@@ -257,8 +283,8 @@ export default function MainPage() {
                       alignItems: "center",
                     }}
                   >
-                    <CustomizedMenus />
-                  </Box>
+                    <CustomizedMenus onSelect={setSelectedStack}/>                  
+                    </Box>
 
                   <Button
                     variant="contained"
@@ -277,7 +303,7 @@ export default function MainPage() {
                     variant="contained"
                     color="primary"
                     onClick={MakeAPICall}
-                    href={projectLink}
+                    href={""}
                   >
                     Click here
                   </Button>
