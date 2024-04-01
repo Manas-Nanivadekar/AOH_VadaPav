@@ -18,7 +18,7 @@ const Docs = () => {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <AppAppBar />
             <div style={{ marginTop: '80px', padding: '30px 100px'}}>
-                <Typography>Hello</Typography>
+                <Typography>Run the following commands in your cloud shell to provide your credentials:</Typography>
                 <CopyBlock
                     text={code1}
                     language={language}

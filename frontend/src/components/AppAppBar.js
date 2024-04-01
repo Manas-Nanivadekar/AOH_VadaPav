@@ -133,7 +133,7 @@ function AppAppBar(mode) {
                     </Link>
                   </Typography>
                 </MenuItem>
-                <MenuItem
+                {/* <MenuItem
                   //onClick={() => scrollToSection('footer')}
                   sx={{ py: "6px", px: "12px" }}
                 >
@@ -141,7 +141,7 @@ function AppAppBar(mode) {
                       Contact
                     
                   </Typography>
-                </MenuItem>
+                </MenuItem> */}
               </Box>
             </Box>
             <Box

@@ -9,8 +9,6 @@ router.post('/mern', user.deployMernApp);
 // deploy static app
 router.post('/static', user.deployStaticApplication);
 
-// deploy lamp app
-router.post('/lamp', user.deployLampApp);
 
 // destroy mern app
 router.post('/mern', user.destroyMernApp);

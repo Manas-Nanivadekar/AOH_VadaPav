@@ -18,7 +18,7 @@ const items = [
     icon: <ViewQuiltRoundedIcon />,
     title: 'Easy Deployment',
     description:
-      'majs.tech offers effortless project deployment with a user-friendly interface for both beginners and seasoned developers. With just a few clicks, input your project details, choose a cloud provider, and click Deploy to turn your ideas into reality effortlessly.',
+      'Terraforge offers effortless project deployment with a user-friendly interface for both beginners and seasoned developers. With just a few clicks, input your project details, choose a cloud provider, and click Deploy to turn your ideas into reality effortlessly.',
     imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
   },
@@ -26,7 +26,7 @@ const items = [
     icon: <EdgesensorHighRoundedIcon />,
     title: ' Cloud Agnosticism',
     description:
-      'Explore the benefits of seamlessly switching between cloud providers on this page. Majs.tech gives you the flexibility to choose the ideal cloud for your project needs, ensuring a tailored deployment experience.',
+      'Explore the benefits of seamlessly switching between cloud providers on this page. Terraforge gives you the flexibility to choose the ideal cloud for your project needs, ensuring a tailored deployment experience.',
     imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
@@ -34,7 +34,7 @@ const items = [
     icon: <DevicesRoundedIcon />,
     title: 'Multi-Cloud Freedom',
     description:
-      'Deploy your project effortlessly on major cloud platforms like AWS, GCP, and Azure with Majs.tech. Additionally, enjoy the flexibility of multi-cloud deployment, giving you the freedom to choose the most suitable cloud environment for your needs.',
+      'Deploy your project effortlessly on major cloud platforms like AWS, GCP, and Azure with Terraforge. Additionally, enjoy the flexibility of multi-cloud deployment, giving you the freedom to choose the most suitable cloud environment for your needs.',
     imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
     imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
   },

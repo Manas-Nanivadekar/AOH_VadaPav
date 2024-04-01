@@ -69,7 +69,7 @@ export default function Secondary() {
                 color="primary"
                 sx={{ width: "150px" }}
               >
-                Easy Deployment
+                Cloud Copilot
               </Button>
               <Typography
                 component="span"

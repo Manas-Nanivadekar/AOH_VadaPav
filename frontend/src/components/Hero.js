@@ -80,11 +80,11 @@ export default function Hero() {
             </Button>
           </Stack>
           <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start for free&quot; you agree to our&nbsp;
+            {/* By clicking &quot;Start for free&quot; you agree to our&nbsp; */}
             <Link href="#" color="primary">
-              Terms & Conditions
+              Terms & Conditions*
             </Link>
-            .
+            
           </Typography>
         </Stack>
       </Container>
